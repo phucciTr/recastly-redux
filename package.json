@@ -7,8 +7,9 @@
   "private": true,
   "scripts": {
     "test": "live-server --open=./SpecRunner.html --port=8081",
-    "start": "live-server",
-    "build": "webpack -d --watch"
+    "start": "live-server --open=./index.html --port=8080 & code .",
+    "build": "webpack -d --watch",
+    "bundle": "npm run test & npm run start & npm run build"
   },
   "dependencies": {
     "babel-core": "6.24.1",
