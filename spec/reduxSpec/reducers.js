@@ -22,6 +22,7 @@ describe('reducers', function() {
       expect(currentVideoReducer(undefined, {type: 'FOO_BAR'})).to.be.null;
     });
     it('should change state to a new video when a "CHANGE_VIDEO" action is passed in', function() {
+      debugger;
       expect(currentVideoReducer(undefined, changeVideo({script: 'this is my only line.'}))).to.deep.equal({script: 'this is my only line.'});
     });
     it('should not mutate existing state', function() {
