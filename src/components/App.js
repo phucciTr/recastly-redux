@@ -64,3 +64,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//Commenting in order to commit "Complete planning state"
