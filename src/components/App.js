@@ -2,6 +2,11 @@ import React from 'react';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
+import SearchContainer from './../containers/SearchContainer.js';
+import VideoListContainer from './../containers/VideoListContainer.js';
+import VideoPlayerContainer from './../containers/VideoPlayerContainer.js';
+
+import SearchYoutube from './../lib/searchYouTube.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +22,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getYouTubeVideos('react tutorials');
+    console.log('this.props = ', this.props);
+    //this.props.handleSearchInputChange('dogs');
   }
 
   handleVideoListEntryTitleClick(video) {
@@ -44,18 +51,18 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
-            <Search getYouTubeVideos={this.getYouTubeVideos}/>
+            <SearchContainer handleSearchInputChange={this.props.handleSearchInputChange} />
+            {/* <Search getYouTubeVideos={this.getYouTubeVideos}/> */}
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo}/>
+            <VideoPlayerContainer video={this.props.currentVideo} />
+            {/* <VideoPlayer video={this.state.currentVideo}/> */}
           </div>
           <div className="col-md-5">
-            <VideoList
-              handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
-              videos={this.state.videos}
-            />
+            <VideoListContainer handleVideoListEntryTitleClick={this.props.handleVideoListEntryTitleClick} videos={this.props.VideoList} />
+            {/* <VideoList handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)} videos={this.state.videos}/> */}
           </div>
         </div>
       </div>
