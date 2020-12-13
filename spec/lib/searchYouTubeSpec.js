@@ -1,3 +1,5 @@
+import searchYoutube from './src/lib/searchYoutube.js';
+
 var getURLSearchParams = function(url) {
   return url
     .split('?')[1]
