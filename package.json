@@ -6,8 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "test": "live-server --open=./SpecRunner.html --port=8081",
-    "start": "live-server --open=./index.html --port=8080 & code .",
+    "test": "live-server --browser='Google Chrome' --open=./SpecRunner.html --port=8081",
+    "start": "live-server --browser='Google Chrome' --open=./index.html --port=8080 & code .",
     "build": "webpack -d --watch",
     "bundle": "npm run test & npm run start & npm run build"
   },
